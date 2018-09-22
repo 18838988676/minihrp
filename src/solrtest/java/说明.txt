@@ -1,0 +1,1 @@
+solr  没和springboot整合   

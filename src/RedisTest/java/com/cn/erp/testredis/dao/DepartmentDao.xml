@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cn.erp.testredis.dao.DepartmentDao">
+
+<select id="selectById" resultType="DepartmentVO">
+		select * from department where id = #{value}
+	</select>
+	
+	<select id="list" resultType="DepartmentVO">
+		select * from department      
+	</select>
+	
+	<update id="updateById" parameterType="DepartmentVO">
+		update department 
+		<set>
+			<if test="departmentcode != null">'departmentcode' = #{departmentcode}, </if>
+			<if test="departmentname != null">'departmentname' = #{departmentname}, </if>
+			<if test="pinyincode != null">'pinyincode' = #{pinyincode}, </if>
+			<if test="wubicode != null">'wubicode' = #{wubicode}, </if>
+			<if test="registersum != null">'registersum' = #{registersum}, </if>
+			<if test="site != null">'site' = #{site}, </if>
+			<if test="isregister != null">'isregister' = #{isregister}, </if>
+			<if test="isvalid != null">'isvalid' = #{isvalid}, </if>
+			<if test="note != null">'note' = #{note}</if>
+		</set>
+		where id = #{id}
+	</update>
+	
+	
+	<delete id="deleteById">
+		delete from department where id = #{value}
+	</delete>
+	<insert id="save" parameterType="DepartmentVO" useGeneratedKeys="true" keyProperty="id">
+		insert into department
+		(
+			'departmentcode', 
+			'departmentname', 
+			'pinyincode', 
+			'wubicode', 
+			'registersum', 
+			'site', 
+			'isregister', 
+			'isvalid', 
+			'note'
+		)
+		values
+		(
+			#{departmentcode}, 
+			#{departmentname}, 
+			#{pinyincode}, 
+			#{wubicode}, 
+			#{registersum}, 
+			#{site}, 
+			#{isregister}, 
+			#{isvalid}, 
+			#{note}
+		)
+	</insert>
+	 
+	
+	
+	
+	
+
+</mapper>

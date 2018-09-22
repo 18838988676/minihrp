@@ -1,0 +1,33 @@
+redis ：   启动的是哨兵模式的； C:\aredis  有客户端   rz是服务器端 ：  去服务里打开从库：wredis6379cc
+
+打开主库： wredis6379zz
+
+再进入rz   cmd 进入并输入：redis-server.exe redis-sentinel.conf --sentinel  启动哨兵模式
+{
+ 注意：redis-sentinel.conf 有哨兵模式的端口 和  ip       127.0.0.1:6388  java 连接的是哨兵的这个端口；不是主库的端口
+}
+
+
+进入redis安装目录  ：
+1安装哨兵模式
+redis-server --service-install redis-sentinel.conf --sentinel  --service-name RedisSentinel
+安装redis服务
+redis-server --service-install redis.windows-service6380.conf  --service-name wwwredis6380zz --port 6380
+
+
+
+
+
+本tnt  使用了redis的哨兵模式：
+
+使用tnt  要进入C:\aredis\rz   
+打开redis 从库 和主库   以及 哨兵模式 才能使用rediss
+
+打开主库：redis-server redis.windows-service6380.conf  port 6380   手动打开cmd 不显示什么  看日志
+打开从库：redis-server redis.windows-service.conf  port 6379
+打开哨兵模式：redis-server.exe redis-sentinel.conf --sentinel
+
+或者进入服务：wredis6379cc   wredis6380zz   redissentinel  以上名称启动即可 用redis了
+
+
+

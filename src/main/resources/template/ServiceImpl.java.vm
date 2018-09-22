@@ -1,0 +1,64 @@
+package ${package}.service.impl;
+
+import java.util.List;
+import java.util.Map;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ${package}.dao.${className}Dao;
+import ${package}.entity.${className}VO;
+
+@Service("${classname}Service")
+public class ${className}ServiceImpl{
+
+  	@Autowired
+    private ${className}Dao ${classname}Dao;
+	
+
+	 /**
+     * 列表
+     */
+   public List<${className}VO> list(Map<String, Object> params){
+  		return ${classname}Dao.list(params);
+  	}
+  	
+  	
+  	 /**
+     * 信息
+     */
+  	public ${className}VO selectById(String id) {
+		return ${classname}Dao.selectById(id);
+	}
+	
+	
+	/**
+     * 保存
+     */
+	public Integer insert(${className}VO ${classname}VO) {
+		return ${classname}Dao.insert(${classname}VO);
+	}
+	
+	 /**
+     * 修改
+     */
+	public Integer updateById(${className}VO ${classname}VO) {
+		return ${classname}Dao.updateById(${classname}VO);
+	}
+	
+	 /**
+     * 删除单个
+     */
+	public Integer deleteById(Integer id) {
+		return  ${classname}Dao.deleteById(id);
+	}
+	
+	/**
+     * 删除多个
+     */
+	public Integer deleteByIds(List<String> ids) {
+		return  ${classname}Dao.deleteByIds(ids);
+	}
+	
+	
+
+}

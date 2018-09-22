@@ -1,0 +1,30 @@
+package ${package}.dao;
+
+import java.util.List;
+import java.util.Map;
+import org.apache.ibatis.annotations.Mapper;
+import ${package}.entity.${className}VO;
+
+/**
+ * ${comments}
+ * 
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+@Mapper
+public interface ${className}Dao {
+	
+	List<${className}VO> list(Map<String, Object> params);
+
+	${className}VO selectById(String id);
+
+	Integer deleteById(Integer id);
+
+	Integer updateById(${className}VO ${classname}VO);
+
+	Integer deleteByIds(List<String> asList);
+
+	Integer insert(${className}VO ${classname}VO);
+	
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+${name}
+<br>
+${n1?number}
+<br>
+${n3?string.percent}
+<br>
+${n4?string.currency}
+
+<br>
+
+
+<#--   插值结果为数字值：根据默认格式(#setting 指令设置)将表达式结果转换成文本输出。可以使用内建的字符串函数格式单个插值，例如 -->
+<#setting number_format = "currency" />
+       <#assign price = 42 />
+       ${price}
+       ${price?string}
+       ${price?string.number}
+       ${price?string.currency}
+       ${price?string.percent}
+       <br><br>
+       
+       
+       <#-- 输出值为日期值：根据默认格式(由 #setting 指令设置)将表达式结果转换成文本输出，可以使用内建的字符串函数格式化单个插值，例如  -->
+      <!--  <#assign lastUpdated = "2009-01-07 15:05"?datetime("yyyy-MM-dd HH:mm") /> -->
+      ${lastUpdated?string("yyyy-MM-dd HH:mm:ss zzzz")};<br>
+      ${lastUpdated?string("EEE,MMM d,yy")};<br>
+      ${lastUpdated?string("EEEE,MMMM dd,yyyy,hh:mm:ss a '('zzz')'")};<br>
+      
+      
+      <#-- 插值结果为布尔值   <#assign foo=false /> -->
+      ${foo?string("是foo","非foo")}<br>
+      
+      <br>
+      
+  <#--
+  
+  
+       数字格式化插值
+     数字格式化插值可采用#{expr;format}的形式来格式化数字，其中format可以是：
+     mX:小数部分最小X位
+     MX:小数部分最大X位
+      
+    -->    
+      
+      <#assign x = 2.582 />
+        <#assign y =4 />
+        #{x;M2};<br>
+        #{y;M2};<br>
+        #{x;m1};<br>
+        #{y;m1};<br>
+        #{x;m1M2};<br>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+</body>
+</html>
