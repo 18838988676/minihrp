@@ -15,4 +15,4 @@ rabbit 整合springboot
 
 這是在testmq 分支上
 
-wmcceshi22222222222222fenzhi  djfakldsjflk 
+wmcceshimq 22222222222222fenzhi  djfakldsjflk 
