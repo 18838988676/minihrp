@@ -4,15 +4,4 @@ https://www.cnblogs.com/hlhdidi/p/6535677.html  hao
 
 rabbit 整合springboot
 
-
-7878787
-123
-
-789
-
-
-456 999
-
-這是在testmq 分支上
-
-wmcceshimq 22222222222222fenzhi  djfakldsjflk 
+testMQ
