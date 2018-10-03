@@ -24,7 +24,7 @@ public class DemoRedis {
 	//获取哨兵模式的jedis
 	Jedis getJedis() {
 			Set<String> sentinels = new HashSet<String>();  
-	        String hostAndPort1 = "127.0.0.1:6388";  
+	        String hostAndPort1 = "127.0.0.1:6389";  
 	        sentinels.add(hostAndPort1);         
 	        JedisSentinelPool redisSentinelJedisPool = new JedisSentinelPool("wredis6380zz",sentinels);  
 	        Jedis jedis = null;  

@@ -22,6 +22,7 @@
 	<classpathentry kind="src" path="src/RedisTest/java"/>
 	<classpathentry kind="src" path="src/quartztest/java"/>
 	<classpathentry kind="src" path="src/solrtest/java"/>
+	<classpathentry kind="src" path="src/rabbitmq/java"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>

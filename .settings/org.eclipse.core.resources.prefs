@@ -3,5 +3,6 @@ encoding//src/RedisTest/java=UTF-8
 encoding//src/RedisTest/java/com/cn/erp/testredis/cruddemo/DemoRedis.java=UTF-8
 encoding//src/main/java=UTF-8
 encoding//src/main/resources=UTF-8
+encoding//src/main/resources/application.properties=UTF-8
 encoding//src/test/java=UTF-8
 encoding/<project>=UTF-8

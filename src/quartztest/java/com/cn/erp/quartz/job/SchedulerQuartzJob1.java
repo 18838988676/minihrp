@@ -10,20 +10,20 @@ import org.quartz.JobExecutionException;
  */
 public class SchedulerQuartzJob1 implements Job{
     private void before(){
-        System.out.println("任务开始执行111111111111111111111111");
+       // System.out.println("任务开始执行111111111111111111111111");
     }
 
     @Override
     public void execute(JobExecutionContext arg0) throws JobExecutionException {
-        before();
+      /*  before();
         System.out.println("开始："+System.currentTimeMillis());
         // TODO 业务
         System.out.println("结束："+System.currentTimeMillis());
-        after();
+        after();*/
     }
 
     private void after(){
-        System.out.println("任务开始执行22222222222");
+//        System.out.println("任务开始执行22222222222");
     }
 
 }

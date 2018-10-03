@@ -1,1 +1,3 @@
 quartz  已经和springboot整合了   
+
+SchedulerQuartzJob1 和 2  輸出的信息  關閉了

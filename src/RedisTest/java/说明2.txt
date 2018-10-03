@@ -1,0 +1,9 @@
+localhost:8088/RedisTest/aa
+
+
+测试redis  已经集成sentinel了
+
+
+
+
+

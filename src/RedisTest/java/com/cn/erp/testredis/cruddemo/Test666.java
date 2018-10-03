@@ -9,7 +9,7 @@ public class Test666 {
 	// 添加
 	@Test
 	public void demo1() {
-		String add = new DemoRedis().addBySen("ppp224444", "woaini");
+		String add = new DemoRedis().addBySen("我", "woaini");
 		System.out.println(add);
 		String add2 = new DemoRedis().addBySen("ppp66332", "woxiaa");
 		System.out.println(add2);

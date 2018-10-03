@@ -1,0 +1,21 @@
+SpringBoot集成Solr启动项目报错Error creating bean with name 'solrClient' defined in class path resource解决方法:
+SpringBoot是可以帮你自动做很多事，但有时候带来不是方便而是错误，比如在启动集成了solr的springboot项目时，它自动创建了一个HttpSolrClient，而这个会和你自己在项目中创建的HttpSolrClient发生冲突，所以导致错误，错误日志如下：
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'solrClient' defined in class path resource [org/springframework/boot/autoconfigure/solr/SolrAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.solr.client.solrj.SolrClient]: Factory method 'solrClient' threw exception; nested exception is java.lang.NoClassDefFoundError: org/apache/solr/client/solrj/impl/HttpSolrClient$Builder
+    at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:587) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+    at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1254) ~[spring-beans-5.0.6.RELEASE.jar:5.0.6.RELEASE]
+    at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(Ab
+
+解决方法：通过在启动类禁用Solr的自动配置即可
+
+@SpringBootApplication(exclude = SolrAutoConfiguration.class)
+public class SearchApplication extends SpringBootServletInitializer {
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(SearchApplication.class);
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(SearchApplication.class, args);
+    }
+}
