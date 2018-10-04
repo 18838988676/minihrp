@@ -4,4 +4,13 @@ https://www.cnblogs.com/hlhdidi/p/6535677.html  hao
 
 rabbit 整合springboot
 
-testMQ
+
+
+1: 访问生产者OrderController：http://localhost:8088/order/save?id=1&price=1.2&remark=ll  创建for 循环个产品；
+2： 消费者OrderConsumer和OrderConsumer1 会自动同时消费1产出的商品；
+3：
+	一：OrderConsumer调用StoreService（认为是减库存操作），出现错误（int a=1/0;） 后， rabbitmq控制台http://127.0.0.1:15672/#/queues 中的unacked 显示消费者还没确认，就一
+	    一直卡在那，知道另一个消费者OrderConsumer1调用StoreService2不出现错误 直到这个OrderConsumer1消费者消费完毕后，再 将OrderConsumer消费者没确认（没处理的信息），处理掉；
+	    
+	  二：如果OrderConsumer和OrderConsumer1的2个消费者 都没有错误，则将同时进行消费  
+
